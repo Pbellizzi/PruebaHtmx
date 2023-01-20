@@ -23,7 +23,7 @@
 
 
     <script>
-        function coso() {
+        function ajax() {
             $.ajax({
                  url: 'prueba.html',
                  method: 'get'
@@ -32,9 +32,27 @@
             })
         }
         </script>
+        <button onclick="ajax()"> clickeame</button>
 
-        <button onclick="coso()"> clickeame</button>
     <div id="parent-div2">
+        <p>Esto es otro div</p>
+    </div>
+
+
+    <script>
+        function vainilla() {
+            fetch("prueba.html")
+            .then(respuesta => respuesta.text())
+            .then(texto => {document.querySelector("#moar-divs").innerHTML = texto})
+
+
+        }
+
+        </script>
+
+        <button onclick="vainilla()"> sin verguenza</button>
+
+    <div id="moar-divs">
         <p>Esto es otro div</p>
     </div>
 </body>
