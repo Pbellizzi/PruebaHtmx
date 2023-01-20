@@ -11,12 +11,12 @@
 <body>
     <button hx-get="prueba.html"
     hx-trigger="click"
-    hx-target="#parent-div"
+    hx-target="#div"
     hx-swap="outerHTML"
     >
     clickeame
     </button>
-    <div id="parent-div">
+    <div id="div">
         <p>Esto es un div</p>
     </div>
 
@@ -25,8 +25,8 @@
             $.ajax({
                  url: 'prueba.html',
                  method: 'get'
-            }).done(function(response){
-                $("#parent-div2").replaceWith(response)
+            }).done(function(respuesta){
+                $("#div2").replaceWith(respuesta)
             })
         }
     </script>
@@ -35,7 +35,7 @@
         también
     </button>
 
-    <div id="parent-div2">
+    <div id="div2">
         <p>Esto es otro div</p>
     </div>
     <script>
