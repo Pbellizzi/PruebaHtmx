@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@1.8.5" integrity="sha384-7aHh9lqPYGYZ7sTHvzP1t3BAfLhYSTy9ArHdP3Xsr9/3TlGurYgcPBoFmXX2TX/w" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -13,11 +14,28 @@
     hx-target="#parent-div"
     hx-swap="outerHTML"
     >
-    Click Me!
+    clickeame
     </button>
 
     <div id="parent-div">
         <p>Esto es un div</p>
+    </div>
+
+
+    <script>
+        function coso() {
+            $.ajax({
+                 url: 'prueba.html',
+                 method: 'get'
+            }).done(function(response){
+                $("#parent-div2").replaceWith(response)
+            })
+        }
+        </script>
+
+        <button onclick="coso()"> clickeame</button>
+    <div id="parent-div2">
+        <p>Esto es otro div</p>
     </div>
 </body>
 </html>
